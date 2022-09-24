@@ -21,7 +21,7 @@ export function CreateAdModal() {
   const [useVoiceChannel, setUseVoiceChannel] = useState(false);
 
   useEffect(() => {
-    axios("https://server-nlw-gelado.herokuapp.com//games").then((response) => {
+    axios("https://server-nlw-gelado.herokuapp.com/games").then((response) => {
       setGames(response.data);
     });
   }, []);
@@ -37,7 +37,7 @@ export function CreateAdModal() {
     }
 
     try {
-      await axios.post(`https://server-nlw-gelado.herokuapp.com//games/${data.game}/ads`, {
+      await axios.post(`https://server-nlw-gelado.herokuapp.com/games/${data.game}/ads`, {
         name: data.name,
         yearsPlaying: Number(data.yearsPlaying),
         discord: data.discord,
